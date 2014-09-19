@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="antstructure" basedir="." default="createdtd">
+
+<target name="createdtd" description="Create the xml dtd">
+    <antstructure output="project.dtd"></antstructure>
+</target>
+</project>

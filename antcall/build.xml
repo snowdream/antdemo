@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ant" basedir="." default="antcalldefault">
+<project name="antcall" basedir="." default="antcalldefault">
 
     <!-- The Directory containing source code -->
     <property name="src.dir" value="src"></property>
