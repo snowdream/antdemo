@@ -10,6 +10,13 @@
 </target>
 
 <target name = "antoutput" description="Ant an target in another build.xml and output">
-    <ant dir="../helloworld" antfile="build.xml" target="run" output="./output" inheritall="false"></ant>
+    <ant dir="../helloworld" antfile="build.xml" target="run" output="./output"></ant>
 </target>
+
+<target name = "antproperty" description="Ant an target in another build.xml with a property">
+    <ant dir="../helloworld" antfile="build.xml" target="run">
+        <property name="build.dir" value="buildfromant"></property>
+    </ant>
+</target>
+
 </project>
