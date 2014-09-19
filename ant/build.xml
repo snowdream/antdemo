@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ant" basedir="." default="antdefault">
+
+<target name="antdefault" description="Ant another build.xml">
+    <ant dir="../helloworld" antfile="build.xml"></ant>
+</target>
+
+<target name = "anttarget" description="Ant an target in another build.xml">
+    <ant dir="../helloworld" antfile="build.xml" target="run"></ant>
+</target>
+
+<target name = "antoutput" description="Ant an target in another build.xml and output">
+    <ant dir="../helloworld" antfile="build.xml" target="run" output="./output" inheritall="false"></ant>
+</target>
+</project>
