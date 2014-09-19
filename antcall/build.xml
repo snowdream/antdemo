@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ant" basedir="." default="antcalldefault">
+
+    <!-- The Directory containing source code -->
+    <property name="src.dir" value="src"></property>
+<target name="origin" description="Echo the property src.dir">
+    <echo message="${src.dir}"></echo>
+</target>
+
+<target name="antcalldefault" description="antcall the target origin">
+    <antcall target="origin">
+    </antcall>
+</target>
+
+<target name="antcallproperty" description="antcall the target origin with a property">
+    <antcall target="origin">
+        <param name="src.dir" value="srcfromantcall"></param>
+    </antcall>
+</target>
+</project>
