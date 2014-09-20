@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="available" basedir="." default="file">
+
+<target name="file" description="Available from file">
+    <available file="../helloworld/src/com/github/snowdream/java/anttest/HelloWorld.java" property="fileexist" value="true"></available>
+    <echo message="${fileexist}"></echo>
+</target>
+
+<target name="class" description="Available from class">
+    <available classname="com.github.snowdream.java.anttest.HelloWorld" classpath="../helloworld/build/classes/" property="classexist" value="true"></available>
+    <echo message="${classexist}"></echo>
+</target>
+</project>
