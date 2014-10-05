@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="chmod" basedir="." default="default">
+
+<target name="default" description="Default target">
+    <chmod perm="777">
+       <fileset dir="test">
+           <include name="**/*"></include>
+       </fileset>
+    </chmod>
+</target>
+</project>
