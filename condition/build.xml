@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="condition" basedir="." default="default">
+
+<target name="default" description="Default target">
+   <condition property="JavaInWindowsIsOK" value="true">
+       <and>
+           <os family="windows"></os>
+           <or>
+               <equals arg1="${ant.java.version}" arg2="1.5"/>
+               <equals arg1="${ant.java.version}" arg2="1.6"/>
+               <equals arg1="${ant.java.version}" arg2="1.7"/>
+               <equals arg1="${ant.java.version}" arg2="1.8"/>
+           </or>
+       </and>
+   </condition>
+    <echo message="JavaInWindowsIsOK is ${JavaInWindowsIsOK}"></echo>
+</target>
+</project>
