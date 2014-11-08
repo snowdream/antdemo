@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="copy" basedir="." default="default">
+<project name="delete" basedir="." default="default">
 
     <target name="prepare" description="Prepare">
         <touch file="src/test.java" mkdirs="true"></touch>
@@ -12,16 +12,8 @@
         <echo message="ok" file="src/test3.json"></echo>
     </target>
 
-    <target name="default" description="Task Copy" depends="prepare">
-        <copy todir="target" filtering="yes">
-            <fileset dir="src">
-                <include name="**/*"></include>
-            </fileset>
-
-            <filterset>
-                <filter token="ok" value="copyright"></filter>
-            </filterset>
-        </copy>
+    <target name="default" description="Task Delete" depends="prepare">
+        <delete dir="src" verbose="true"></delete>
     </target>
 
 </project>
