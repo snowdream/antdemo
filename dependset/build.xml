@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dependset" basedir="." default="run">
+
+    <!-- The Directory containing source code -->
+    <property name="src.dir" value="src"></property>
+
+    <!-- Temporary build directories -->
+    <property name="build.dir" value="build"></property>
+    <property name="build.classes" value="${build.dir}/classes"></property>
+    <property name="build.lib" value="${build.dir}/lib"></property>
+
+    <!-- Target to create the build directory prior to the compile target -->
+    <target name="prepare">
+        <mkdir dir="${build.dir}"></mkdir>
+        <mkdir dir="${build.classes}"></mkdir>
+        <mkdir dir="${build.lib}"></mkdir>
+    </target>
+
+    <target name="clean" description="Remove all generated files">
+        <delete dir="${build.dir}"></delete>
+    </target>
+
+    <target name="compile" depends="prepare,default" description="Compiles all source code">
+        <javac srcdir="${src.dir}" destdir="${build.classes}" includeAntRuntime="false"></javac>
+    </target>
+
+    <target name="run" depends="compile" description="Run with the classes">
+        <java classname="com.github.snowdream.java.anttest.HelloWorld" classpath="${build.classes}" fork="true"
+              failonerror="true"></java>
+    </target>
+
+    <target name="jar" depends="compile" description="Generate library files">
+        <!-- Exclude unit tests from the final JAR file -->
+        <jar jarfile="${build.lib}/${ant.project.name}.jar"
+             basedir="${build.classes}"
+             excludes="**/*Test.class">
+        </jar>
+    </target>
+
+    <target name="all" depends="clean,jar,run" description="Cleans,Compiles,then builds the JAR file.">
+    </target>
+
+    <target name="default" >
+        <dependset>
+            <srcfileset dir="src" includes="**/*.java"></srcfileset>
+            <targetfileset dir="build" includes="**/*.class"></targetfileset>
+        </dependset>
+    </target>
+</project>
+
