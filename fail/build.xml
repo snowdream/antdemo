@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="fail" basedir="." default="default">
+
+    <target name="default" description="Default fail task">
+        <fail></fail>
+        <fail>Failed to build the project</fail>
+        <fail message="Failed to build the project"></fail>
+    </target>
+</project>
