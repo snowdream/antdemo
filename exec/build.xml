@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="exec" basedir="." default="default">
+
+    <target name="default" description="Default exec task">
+        <exec executable="mkdir" dir="." vmlauncher="false">
+            <arg line="testdir"></arg>
+        </exec>
+    </target>
+
+
+</project>
