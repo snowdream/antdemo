@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="echo" basedir="." default="default">
+
+    <target name="default" description="Default Echo Task">
+        <echo>This is an echo demo.</echo>
+        <echo message="This is another echo demo."></echo>
+        <echo file="echo.txt">This is an echo demo,the message will be written into the file.</echo>
+    </target>
+
+</project>
